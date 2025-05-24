@@ -1,0 +1,282 @@
+---
+---
+
+    <!-- Sticky Scroll Zone -->
+    <div class="scroll-zone">
+      <h1 class="nyhed">SENESTE NYT</h1>
+      <div class="card-container" id="cardContainer">
+        <!-- Card 1 -->
+        <div class="card main">
+          <div class="card-text">
+            <h2>Dramatisk afslutning da b.93 Bookede plads i 1. division</h2>
+            <p>
+              Med tre runder tilbage har B.93 sikret pladsen i NordicBet Ligaen
+              også i 2025/26 sæsonen
+            </p>
+            <button>Læs Mere</button>
+          </div>
+          <div class="card-image">
+            <img src="images/4R5A3144.png" alt="Card Image 1" />
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card side hidden">
+          <div class="card-text">
+            <h2>Dramatisk afslutning da b.93 Bookede plads i 1. division</h2>
+            <p>
+              Med tre runder tilbage har B.93 sikret pladsen i NordicBet Ligaen
+              også i 2025/26 sæsonen
+            </p>
+            <button>Læs Mere</button>
+          </div>
+          <div class="card-image">
+            <img src="images/4R5A3144.png" alt="Card Image 2" />
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card side hidden">
+          <div class="card-text">
+            <h2>Dramatisk afslutning da b.93 Bookede plads i 1. division</h2>
+            <p>
+              Med tre runder tilbage har B.93 sikret pladsen i NordicBet Ligaen
+              også i 2025/26 sæsonen
+            </p>
+            <button>Læs Mere</button>
+          </div>
+          <div class="card-image">
+            <img src="images/4R5A3144.png" alt="Card Image 3" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+
+
+    <style>
+    
+@font-face {
+  font-family: "display-italic";
+  src: url(fonts/B.93-Display-Italic.otf);
+}
+@font-face {
+  font-family: "display";
+  src: url(fonts/B.93-Display.otf);
+}
+@font-face {
+  font-family: "body";
+  src: url(fonts/B.93-Text.otf);
+}
+@font-face {
+  font-family: "Morion";
+  src: url(fonts/Morion-Regular.otf);
+}
+body {
+  margin: 30px;
+}
+.nyhed {
+  font-family: "Morion";
+  font-size: clamp(25px, 6.5vw, 80px);
+  color: white;
+  margin: 0;
+}
+
+/* Default: large text for main card only */
+.card.main .card-text h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 20px; /* ← Adds space between h2 and p */
+}
+.card.main .card-text p {
+  font-size: clamp(0.8rem, 1.6vw, 1.4rem);
+}
+
+/* When scrolled: override ALL cards (main + sides) */
+.card-container.scrolled .card .card-text h2 {
+  font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+  margin-bottom: 20px; /* ← Adds space between h2 and p */
+}
+
+.card-container.scrolled .card .card-text p {
+  font-size: clamp(0.7rem, 1vw, 1rem);
+}
+.card-text,
+.card-image {
+  box-sizing: border-box;
+  height: 100%;
+}
+.card-container.scrolled .main,
+.card-container.scrolled .side {
+  width: 500px;
+  height: 300px;
+}
+.scroll-zone {
+  height: 150vh;
+  position: relative;
+  background: #fff;
+}
+
+.card-container {
+  position: sticky;
+  top: 0;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.5s ease;
+  background: #111764;
+  z-index: 10;
+}
+
+/* Base card style */
+.card {
+  display: flex;
+  flex-direction: row;
+  background: #111764;
+  width: 500px;
+  height: 300px; /* Default height for side cards */
+  transition: all 1.5s ease;
+  overflow: hidden;
+  border-radius: 0;
+}
+/* Main card starts bigger */
+.card.main {
+  width: 1000px;
+  height: 50vh;
+  transition: all 2s ease;
+}
+/* On scroll, main card shrinks to same size as others */
+.card-container.scrolled .main {
+  width: 500px;
+  height: 300px; /* Match side card height */
+}
+.card.side {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 1.5s ease;
+}
+.card-container.scrolled .side {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card-text {
+  flex: 1;
+  padding: 10px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-text h2 {
+  margin: 0 0 10px;
+  font-family: "Morion";
+  color: white;
+}
+
+.card-text p {
+  margin: 0 0 20px;
+  font-family: "body";
+  color: white;
+}
+
+.card-text button {
+  background: none;
+  border: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+.card-image {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-left: 1px solid #ddd;
+  background: #f9f8f7;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.side {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.card-container.scrolled .main {
+  width: 400px;
+}
+
+.card-container.scrolled .side {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hidden {
+  pointer-events: none;
+}
+
+.after-content {
+  padding: 100px;
+  background: #f0f0f0;
+}
+.card-container.scrolled .card .card-text {
+  justify-content: flex-start;
+  padding-top: 10px;
+}
+.card-container.scrolled .card .card-text h2 {
+  font-size: clamp(1rem, 1.8vw, 1.6rem);
+}
+.card-text {
+  position: relative; /* Required for absolute positioning inside */
+}
+
+.card-text button {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}</style>
+
+<script>window.addEventListener("scroll", () => {
+  const container = document.getElementById("cardContainer");
+  const scrollZone = document.querySelector(".scroll-zone");
+  const zoneTop = scrollZone.offsetTop;
+  const zoneHeight = scrollZone.offsetHeight;
+
+  const scrollY = window.scrollY;
+  const enteredZone = scrollY > zoneTop;
+  const exitedZone = scrollY > zoneTop + zoneHeight - window.innerHeight;
+
+  if (enteredZone && !exitedZone) {
+    container.classList.add("scrolled");
+  } else {
+    container.classList.remove("scrolled");
+  }
+});
+let isScrolled = false;
+
+window.addEventListener("scroll", () => {
+  const triggerPoint = 100; // Scroll distance to trigger
+
+  if (window.scrollY > triggerPoint && !isScrolled) {
+    isScrolled = true;
+
+    document.querySelector(".card-container").classList.add("scrolled");
+  } else if (window.scrollY <= triggerPoint && isScrolled) {
+    isScrolled = false;
+
+    document.querySelector(".card-container").classList.remove("scrolled");
+  }
+});</script>

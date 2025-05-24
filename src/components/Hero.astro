@@ -9,3 +9,73 @@
       <h1>KLUBBEN ER <span id="changing-word">SAMMENHOLD</span></h1>
     </div>
   </section>
+
+  <style>
+  * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "display";
+  src: url(fonts/B.93-Display\.otf);
+}
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  will-change: transform;
+}
+
+.overlay {
+  position: absolute; /* position relative to .hero */
+  bottom: 2px; /* distance from the bottom */
+  left: 30px; /* distance from the left */
+  z-index: 1;
+  color: white;
+  text-align: left;
+  font-size: clamp(25px, 4.4vw, 120px);
+  font-family: "display";
+  pointer-events: none;
+}
+
+.hello {
+  height: 1000px;
+  width: 500px;
+} 
+</style>
+
+<script>
+  window.addEventListener("scroll", () => {
+  const scrolled = window.scrollY;
+  const video = document.querySelector(".hero video");
+  video.style.transform = `translate(-50%, calc(-50% + ${scrolled * 0.3}px))`;
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const words = ["SAMMENHOLD", "KÆRLIGHED", "ÆGTE"];
+  let index = 0;
+  const span = document.getElementById("changing-word");
+
+  setInterval(() => {
+    index = (index + 1) % words.length;
+    span.textContent = words[index];
+  }, 2000);
+});
+</script>
