@@ -54,20 +54,9 @@ html {
   font-family: "display";
   pointer-events: none;
 }
-
-.hello {
-  height: 1000px;
-  width: 500px;
-} 
 </style>
 
 <script>
-  window.addEventListener("scroll", () => {
-  const scrolled = window.scrollY;
-  const video = document.querySelector(".hero video");
-  video.style.transform = `translate(-50%, calc(-50% + ${scrolled * 0.3}px))`;
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   const words = ["SAMMENHOLD", "KÆRLIGHED", "ÆGTE"];
   let index = 0;

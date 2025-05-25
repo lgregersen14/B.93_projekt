@@ -1,0 +1,214 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+
+
+---
+
+<Layout>
+  <body>
+    <div id="container">
+      <div id="left-side">
+        <div class="text-wrapper">
+          <section class="text-slide active">
+            <h1>HISTORIEN</h1>
+            <p>
+              B.93 hører med ni danske mesterskaber og en pokalsejr til de
+              absolut mest vindende i dansk fodbold. Storhedstiden oplevede
+              klubben i 1930erne, hvor klubben blev kendt under navnet
+              champagneholdet og vandt en stribe mesterskaber anført af den
+              legendariske spiller Michael Rohde, der sammen med flere
+              holdkammerater sikrede, at der fast var en række B.93ere på
+              landsholdet.
+            </p>
+          </section>
+          <section class="text-slide">
+            <p>
+              Indenfor de første seks dage i 1922 spillede et forstærket
+              B.93-hold tre kampe i Spanien mod FC Barcelona. Den første kamp,
+              som blev spillet nytårsdag, vandt B.93 meget overraskende 2-1. To
+              dage efter spillede de to hold en ny kamp, hvor hjemmeholdet
+              levede op til favoritværdigheden med en sikker sejr på 4-1. Turens
+              sidste kamp, som afsluttede den 14 dages lange tur til Spanien,
+              resulterede i endnu en overraskende sejr til B.93, denne gang blev
+              resultatet 2-0 til de hvidblusede.
+            </p>
+          </section>
+          <section class="text-slide">
+            <p>
+              B.93 blev stiftet som en cricketklub den 19. maj 1893. I 1896 kom
+              fodbold på programmet, og klubben var uafbrudt i landets bedste
+              række fra 1896 til 1954, da klubben rykkede ned i 2. division
+              efter at have spillet uafgjort mod Køge, der blev Danmarksmestre.
+              Den sidste store triumf for B.93 var, da klubben vandt
+              pokalfinalen i 1982 og gik til anden runde i Europa Cup’en for
+              pokalvindere.
+            </p>
+          </section>
+          <section class="text-slide">
+            <p>
+              B.93 er en moderne klub i en moderne storby, men vi bærer
+              historien og traditionerne med os. Ikke mindst takket være
+              klubbens chefstatistiker, den næsten legendariske tidligere 2.
+              holdsmålmand (der dog også fik tid til at spille 10 1. holdskampe)
+              Palle Banks Jørgensen. I 1999 udgav han bogen B.93 Fodbold
+              1896-1999 med undertitlen En fodboldkrønike fra den spæde
+              begyndelse til Superligaen.
+            </p>
+          </section>
+          <section class="text-slide">
+            <p>
+              Den blev i 2008 fulgt op af en ny udgave med titlen B.93’s
+              fodboldhistorie – Michael Rohde og alle de andre. Bogen er en
+              enestående samling af informationer om samtlige turnerings- og
+              pokalkampe for klubbens bedste hold fra starten i 1896 til 2008
+              med resultater, målscorere og tilskuerantal og oplysninger om
+              klubbens landsholdsspillere og store personligheder på og uden for
+              banen. Bogen er udsolgt fra forlaget, men kan lånes på Københavns
+              Kommunes Biblioteker.
+            </p>
+          </section>
+          <section class="text-slide">
+            <p>
+              Desuden har Palle skrevet tre fremragende bøger om det danske
+              fodboldlandshold (2000-04) og en bog om Superligaens historie
+              (2005). Alle bøgerne er udgivet gennem TIPS-Bladet. Klubben har
+              også et Kulturudvalg, der har indrettet et museumslokale i
+              klubhuset på Svanemølleanlægget, hvor man i tekst og billeder kan
+              få mere viden om klubbens lange historie. Du finder meget mere om
+              B.93's glorværdige historie på b93.dk/historie.
+            </p>
+          </section>
+        </div>
+      </div>
+
+      <div id="right-side">
+        <div class="image-wrapper">
+          <img src="images/first.jpg" alt="Image 1" />
+          <img src="images/second.png" alt="Image 2" />
+          <img src="images/third.jpg" alt="Image 3" />
+          <img src="images/fourth.jpg" alt="Image 4" />
+          <img src="images/fifth.jpg" alt="Image 5" />
+          <img src="images/sixth.jpg" alt="Image 6" />
+        </div>
+      </div>
+    </div>
+  </body>
+</Layout>
+<style>
+    @font-face {
+  font-family: "display-italic";
+  src: url(fonts/B.93-Display-Italic.otf);
+}
+@font-face {
+  font-family: "display";
+  src: url(fonts/B.93-Display.otf);
+}
+@font-face {
+  font-family: "body";
+  src: url(fonts/B.93-Text.otf);
+}
+@font-face {
+  font-family: "Morion";
+  src: url(fonts/Morion-Regular.otf);
+}
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  color: #00084b;
+}
+
+#container {
+  display: flex;
+  margin: 0 clamp(20px, 5vw, 30px);
+  height: 100vh;
+  overflow: hidden;
+}
+
+#left-side,
+#right-side {
+  flex: 1;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+
+  /* hide scrollbars */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+#left-side::-webkit-scrollbar,
+#right-side::-webkit-scrollbar {
+  display: none;
+}
+
+.text-wrapper,
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-slide,
+.image-wrapper img {
+  height: 100vh;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.text-slide h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: "Morion";
+  color: #00084b;
+}
+
+.text-slide p {
+  font-size: clamp(1rem, 1.5vw, 1rem);
+  margin: 0;
+  font-family: "body";
+  line-height: 1.5;
+  max-width: 450px; /* or any width you prefer */
+  color: #00084b;
+}
+
+.image-wrapper img {
+  width: clamp(220px, 35vw, 400px);
+  height: clamp(220px, 35vw, 400px);
+  object-fit: cover;
+  margin: 50px 0;
+  border-radius: 0;
+  user-select: none;
+  pointer-events: none;
+}
+#left-side {
+  padding: 100px; /* adds 30px padding on all 4 sides */
+  box-sizing: border-box; /* ensures padding doesn’t break layout */
+}
+</style>
+<script>
+const textSlides = document.querySelectorAll(".text-slide");
+const leftSide = document.getElementById("left-side");
+const rightSide = document.getElementById("right-side");
+
+leftSide.addEventListener("scroll", () => {
+  const scrollPosition = leftSide.scrollTop;
+  const slideHeight = window.innerHeight;
+  const index = Math.round(scrollPosition / slideHeight);
+
+  const targetScroll = index * slideHeight;
+  rightSide.scrollTo({
+    top: targetScroll,
+    behavior: "smooth",
+  });
+});
+</script>

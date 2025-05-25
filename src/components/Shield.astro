@@ -1,0 +1,123 @@
+    <div class="shield-wrapper">
+      <div class="shield-row">
+        <div class="spacer"></div>
+
+        <!-- Left half shield: video -->
+        <div class="shield-container video-shield">
+          <video
+            src="HyggeVideo.mov"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+
+        <!-- Next full shield: image 1 -->
+        <div class="shield-container picture-shield">
+          <img src="image_2.jfif" alt="Image 1" />
+        </div>
+
+        <!-- Middle full shield: video -->
+        <div class="shield-container video-shield">
+          <video
+            src="HyggeVideo.mov"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+
+        <!-- Next full shield: image 2 -->
+        <div class="shield-container picture-shield">
+          <img src="image_1.jfif" alt="Image 2" />
+        </div>
+
+        <!-- Right half shield: video -->
+        <div class="shield-container video-shield">
+          <video
+            src="HyggeVideo.mov"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+
+        <div class="spacer"></div>
+      </div>
+    </div>
+
+    <style>
+        /* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.shield-wrapper {
+  width: 100vw;
+  overflow-x: hidden; /* hide horizontal overflow */
+  position: relative;
+}
+
+:root {
+  --gap: 0px; /* no gap at all */
+  --shield-width: calc((100vw - 4 * var(--gap)) / 3.7);
+  --half-shield: calc(var(--shield-width) / 1.5);
+}
+
+.shield-row {
+  display: flex;
+  gap: var(--gap);
+  padding: 20px 0;
+  align-items: center;
+
+  width: calc(100vw + var(--half-shield) * (5 / 4 - 1));
+  transform: translateX(calc(-1 * var(--half-shield)));
+
+  box-sizing: content-box;
+}
+
+.shield-container {
+  flex-shrink: 0;
+  width: var(--shield-width);
+  aspect-ratio: 1 / 1.2;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+
+  /* Shield shape mask */
+  mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 120' xmlns='http://www.w3.org/2000/svg'><path d='M10 0 H90 Q90 25 90 50 Q90 90 50 115 Q10 90 10 50 Q10 25 10 0 Z'/></svg>");
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 120' xmlns='http://www.w3.org/2000/svg'><path d='M10 0 H90 Q90 25 90 50 Q90 90 50 115 Q10 90 10 50 Q10 25 10 0 Z'/></svg>");
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+.shield-container video,
+.shield-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.video-shield {
+  background: #000;
+}
+
+.picture-shield {
+  background: #ccc;
+} 
+    </style>
