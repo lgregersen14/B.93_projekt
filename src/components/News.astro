@@ -6,6 +6,7 @@ const item2 = data.find(item => item.id === 2);
 const item3 = data.find(item => item.id === 3);
 const item4 = data.find(item => item.id === 4);
 
+
 ---
 
 <div class="container">
@@ -44,21 +45,22 @@ const item4 = data.find(item => item.id === 4);
 </div>
 
 
-    <style>@font-face {
+    <style>
+        @font-face {
   font-family: "display-italic";
-  src: url(fonts/B.93-Display-Italic.otf);
+  src: url(B.93-Display-Italic.otf);
 }
 @font-face {
   font-family: "display";
-  src: url(fonts/B.93-Display.otf);
+  src: url(B.93-Display.otf);
 }
 @font-face {
   font-family: "body";
-  src: url(fonts/B.93-Text.otf);
+  src: url(B.93-Text.otf);
 }
 @font-face {
   font-family: "Morion";
-  src: url(fonts/Morion-Regular.otf);
+  src: url(Morion-Regular.otf);
 }
 /* Global styles */
 body {
@@ -82,11 +84,12 @@ body {
 }
 
 /* Title above the image */
-.box h2 {
+.box a h2 {
   margin-bottom: 15px;
   text-align: left;
-  font-family: "Morion";
   color: #111764;
+  font-family: "Morion";
+  font-size: 50px;
 }
 
 /* Line above h2 for all boxes (real for first/last, invisible for middle) */
@@ -136,7 +139,7 @@ body {
   left: 10px;
   color: white;
   font-family: "display";
-  font-size: 32px;
+  font-size: 50px;
   max-width: 60%;
 }
 
@@ -146,10 +149,23 @@ body {
   text-align: left;
   font-family: "body";
   color: #111764;
-  font-size: 13px;
+  font-size: 16px;
   max-width: 65%;
 }
 
 .box:hover .image-container img {
   transform: scale(1.05); /* slightly zoom in */
-} answer ok</style>
+} 
+.box a {
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.box a h2,
+.box a p {
+  text-decoration: none; /* Ensure no underline on nested elements */
+  color: #00064E;
+}
+.box a {
+color: white;
+}
+style>
