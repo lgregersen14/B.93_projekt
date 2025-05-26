@@ -1,0 +1,176 @@
+---
+import Navigation from '../components/Top_nav.astro';
+
+---
+
+    <Navigation />
+
+<div class="header">
+  <div class="small-text">B.93</div>
+  <h2 class="big-title">Kampdagen hos B.93</h2>
+</div>
+
+<!-- Image right below header -->
+<img src="image_1.jfif" alt="divider image" class="divider-image" />
+
+<div class="container">
+  <!-- Left Side -->
+  <div class="left">
+    <div class="row">
+      <div class="title">Title 1</div>
+      <div class="text">Text 1</div>
+    </div>
+    <div class="row">
+      <div class="title">Title 2</div>
+      <div class="text">Text 2</div>
+    </div>
+    <div class="row">
+      <div class="title">Title 3</div>
+      <div class="text">Text 3</div>
+    </div>
+  </div>
+
+  <!-- Right Side -->
+  <div class="right">
+    <p>
+      This is some static text content on the right side. You can replace
+      this with any paragraph or formatted content you'd like to show.
+    </p>
+  </div>
+</div>
+
+<section class="full-video-section">
+  <video autoplay muted loop playsinline>
+    <source src="HyggeVideo.mov" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+<style>
+  @font-face {
+    font-family: "display-italic";
+    src: url(B.93-Display-Italic.otf);
+  }
+  @font-face {
+    font-family: "display";
+    src: url(B.93-Display.otf);
+  }
+  @font-face {
+    font-family: "body";
+    src: url(B.93-Text.otf);
+  }
+  @font-face {
+    font-family: "Morion";
+    src: url(Morion-Regular.otf);
+  }
+
+  body {
+    font-family: sans-serif;
+    margin: 30px;
+  }
+
+  .header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 100px; /* reduced a bit to fit image better */
+    font-family: "Morion";
+    color: #00084b;
+    margin-top: 230px;
+  }
+
+  .small-text {
+    width: 50%;
+    font-family: "display";
+    font-size: 2rem;
+    text-align: left;
+    color: #00084b;
+  }
+
+  .big-title {
+    width: 50%;
+    font-family: "Morion";
+    font-size: clamp(3rem, 5vw, 5rem);
+    margin: 0;
+    text-align: right; /* Starts exactly from the middle */
+  }
+
+  /* Image styling */
+  .divider-image {
+    display: block;
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    display: flex;
+    align-items: flex-start; /* Align columns to the top */
+    margin-top: 80px;
+  }
+
+  .left,
+  .right {
+    width: 50%;
+    box-sizing: border-box;
+  }
+
+  .row {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    width: 45%;
+    opacity: 0.7;
+  }
+
+  .text {
+    width: 55%;
+  }
+
+  .right {
+    width: 50%;
+    box-sizing: border-box;
+    border: none; /* Just in case */
+  }
+
+  .right p {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: clamp(1rem, 2vw, 1rem);
+    font-family: "body";
+    color: #00084b;
+    line-height: 1.4;
+  }
+
+  .left {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: "Morion";
+    color: #00084b;
+    font-size: clamp(1rem, 2vw, 1rem);
+  }
+
+  .full-video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* full viewport height */
+  overflow: hidden;
+  margin-top: 150px;
+}
+
+.full-video-section video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+</style>
