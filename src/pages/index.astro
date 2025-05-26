@@ -6,8 +6,13 @@ import Textfield from '../components/Textfield.astro';
 import Shield from '../components/Shield.astro';
 import News from '../components/News.astro';
 import Merch from '../components/Merch.astro';
-
-
+const data = await fetch("https://zdggjhwzlbhylduqcvzs.supabase.co/rest/v1/b_tabel", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpkZ2dqaHd6bGJoeWxkdXFjdnpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgyNzIxNjcsImV4cCI6MjA2Mzg0ODE2N30.OREBJzxgBe0ynMTKkLH2qXXScy0VR3ARYgt9jQ6LdCo", 
+},
+}).then((res) => res.json());
+console.log("Fetched data:", data);
 ---
 
 <Layout>
@@ -15,6 +20,5 @@ import Merch from '../components/Merch.astro';
 	<Hero />
 	<Textfield />
 	<Shield />
-	<News/>
-	<Merch />
+<News data={data} />	<Merch />
 </Layout>

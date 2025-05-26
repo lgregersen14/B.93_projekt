@@ -1,49 +1,48 @@
 ---
+const { data = [] } = Astro.props; // default to empty array
+
+// Pull out the individual items by ID
+const item2 = data.find(item => item.id === 2);
+const item3 = data.find(item => item.id === 3);
+const item4 = data.find(item => item.id === 4);
+
 ---
 
-    <div class="container">
-      <div class="box">
-        <h2>SENESTE NYT</h2>
-        <div class="image-container">
-          <img src="image_1.jfif" alt="Placeholder" />
-          <p class="overlay-text">
-            Dramatisk afslutning da b.93 Bookede plads i 1. division
-          </p>
-        </div>
-        <p class="below-text">
-          Med tre runder tilbage har B.93 sikret pladsen i NordicBet Ligaen også
-          i 2025/26 sæsonen
-        </p>
-      </div>
-
-      <div class="box">
-        <h2>SENESTE NYT</h2>
-        <div class="image-container">
-          <img src="image_1.jfif" alt="Placeholder" />
-          <p class="overlay-text">
-            Dramatisk afslutning da b.93 Bookede plads i 1. division
-          </p>
-        </div>
-        <p class="below-text">
-          Med tre runder tilbage har B.93 sikret pladsen i NordicBet Ligaen også
-          i 2025/26 sæsonen
-        </p>
-      </div>
-
-      <div class="box">
-        <h2>SENESTE NYT</h2>
-        <div class="image-container">
-          <img src="image_1.jfif" alt="Placeholder" />
-          <p class="overlay-text">
-            Dramatisk afslutning da b.93 Bookede plads i 1. division
-          </p>
-        </div>
-        <p class="below-text">
-          Med tre runder tilbage har B.93 sikret pladsen i NordicBet Ligaen også
-          i 2025/26 sæsonen
-        </p>
-      </div>
+<div class="container">
+<div class="box">
+  <a href={`/b_tabel/${item2?.id}`}>
+    <h2>{item2?.emne}</h2>
+    <div class="image-container">
+<img src={`/${item2?.picture.trim()}`} alt="billede" />      <p class="overlay-text">{item2?.h1}</p>
     </div>
+    <p class="below-text">{item2?.['brødtext']}</p>
+  </a>
+</div>
+
+
+<div class="box">
+  <a href={`/b_tabel/${item3?.id}`}>
+    <h2>{item3?.emne}</h2>
+    <div class="image-container">
+<img src={`/${item3?.picture.trim()}`} alt="billede" />      <p class="overlay-text">{item3?.h1}</p>
+    </div>
+    <p class="below-text">{item3?.['brødtext']}</p>
+  </a>
+</div>
+
+
+
+<div class="box">
+  <a href={`/b_tabel/${item4?.id}`}>
+    <h2>{item4?.emne}</h2>
+    <div class="image-container">
+<img src={`/${item4?.picture.trim()}`} alt="billede" />      <p class="overlay-text">{item4?.h1}</p>
+    </div>
+    <p class="below-text">{item4?.['brødtext']}</p>
+  </a>
+</div>
+</div>
+
 
     <style>@font-face {
   font-family: "display-italic";
