@@ -7,8 +7,8 @@
     </div>
 
     <div class="image-row">
-      <img src="image_1.jfif" alt="Billede 1" />
-      <img src="image_1.jfif" alt="Billede 2" />
+      <img src="shoppen_1.png" alt="Billede 1" />
+      <img src="shoppen_2.png" alt="Billede 2" />
     </div>
 
     <style>* {
@@ -31,29 +31,28 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-/* Video container */
 .video-wrapper {
   position: relative;
-  height: 120vw; /* tall video container */
-  width: calc(100vw - 60px);
+  height: 120vw;
+  width: 100%;
   margin: 0 30px;
-  padding-bottom: 25vw; /* bottom padding for sticky stop */
+  padding-bottom: 25vw;
   background: black;
   overflow: visible;
+  box-sizing: border-box; /* ensures padding/margin are included */
 }
 
-/* Video */
+
+/* Video styles */
 .video-wrapper video {
- position: absolute;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  object-fit: 'cover';
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  object-fit: cover; /* Fix: no quotes around cover */
+  width: 100%;
+  height: 100%;
 }
 
 /* Overlay text */

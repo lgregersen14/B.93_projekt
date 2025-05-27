@@ -11,7 +11,7 @@ const item4 = data.find(item => item.id === 4);
 
 <div class="container">
 <div class="box">
-  <a href={`/b_tabel/${item2?.id}`}>
+  <a>
     <h2>{item2?.emne}</h2>
     <div class="image-container">
 <img src={`/${item2?.picture.trim()}`} alt="billede" />      <p class="overlay-text">{item2?.h1}</p>
@@ -22,7 +22,7 @@ const item4 = data.find(item => item.id === 4);
 
 
 <div class="box">
-  <a href={`/b_tabel/${item3?.id}`}>
+  <a>
     <h2>{item3?.emne}</h2>
     <div class="image-container">
 <img src={`/${item3?.picture.trim()}`} alt="billede" />      <p class="overlay-text">{item3?.h1}</p>
@@ -34,7 +34,7 @@ const item4 = data.find(item => item.id === 4);
 
 
 <div class="box">
-  <a href={`/b_tabel/${item4?.id}`}>
+  <a>
     <h2>{item4?.emne}</h2>
     <div class="image-container">
 <img src={`/${item4?.picture.trim()}`} alt="billede" />      <p class="overlay-text">{item4?.h1}</p>
@@ -72,8 +72,7 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 30px;
-  padding: 0 30px;
-}
+padding: 150px 30px;}
 
 /* Individual box */
 .box {
@@ -87,7 +86,7 @@ body {
 .box a h2 {
   margin-bottom: 15px;
   text-align: left;
-  color: #111764;
+  color: #00064E;
   font-family: "Morion";
   font-size: 50px;
 }
@@ -98,7 +97,7 @@ body {
 .box:nth-child(2) h2::before {
   content: "";
   display: block;
-  height: 1px;
+  height: 2px;
   width: 100%;
   margin-bottom: 17px;
 }
@@ -106,7 +105,7 @@ body {
 /* Real black lines on left and right boxes */
 .box:first-child h2::before,
 .box:last-child h2::before {
-  background-color: #111764;
+  background-color: #00064E;
 }
 
 /* Invisible line on middle box */
@@ -148,9 +147,9 @@ body {
   margin-top: 15px;
   text-align: left;
   font-family: "body";
-  color: #111764;
+  color: #00064E;
   font-size: 16px;
-  max-width: 65%;
+  max-width: 70%;
 }
 
 .box:hover .image-container img {
