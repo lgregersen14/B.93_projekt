@@ -1,0 +1,108 @@
+HTML 
+
+<body>
+<div class="container">
+<h1 class="headline">BOLDKLUBBEN<br><span>AF 1893</span></h1>
+<div class="links-wrapper">
+<div class="links">
+<div class="column">
+<a href="#">Nyhedsbrev</a>
+<a href="#">Instagram (herrer)</a>
+<a href="#">Instagram (kvinder)</a>
+<a href="#">LinkedIn</a>
+<a href="#">YouTube</a>
+</div>
+<div class="column">
+<a href="#">Kontakt</a>
+<a href="#">Moderklubben</a>
+<a href="#">Privatlivsvilkår</a>
+<a href="#">Sundby Idrætspark</a>
+</div>
+</div>
+</div>
+</div>
+</body>
+
+<style>
+            @font-face {
+  font-family: "display-italic";
+  src: url(B.93-Display-Italic.otf);
+}
+@font-face {
+  font-family: "display";
+  src: url(B.93-Display.otf);
+}
+@font-face {
+  font-family: "body";
+  src: url(B.93-Text.otf);
+}
+@font-face {
+  font-family: "Morion";
+  src: url(Morion-Regular.otf);
+}
+    body {
+margin: 0;
+padding: 0;
+color: white;
+}
+
+.container {
+padding: 40px;
+position: relative;
+background-color: #00074f;
+}
+
+.headline {
+font-family: "display";
+font-size: 16vw;
+font-weight: bold;
+margin: 0;
+line-height: 0.9;
+z-index: 1;
+}
+
+.headline span {
+display: block;
+}
+
+.links-wrapper {
+font-family: "display";
+display: flex;
+justify-content: flex-end;
+margin-top: 60px;
+}
+
+.links {
+display: flex;
+gap: 80px; /* Øger afstand mellem kolonner */
+flex-wrap: nowrap;
+}
+
+.column {
+display: flex;
+flex-direction: column;
+gap: 16px; /* Lidt mere luft mellem links */
+}
+
+a {
+color: white;
+text-decoration: none;
+font-size: 16px;
+}
+
+/* RESPONSIVE: under 800px */
+@media (max-width: 800px) {
+.links-wrapper {
+justify-content: flex-start;
+}
+
+.links {
+flex-direction: column;
+gap: 48px; /* Større afstand mellem kolonner i mobilvisning */
+}
+
+.headline {
+font-size: 14vw;
+}
+}
+</style>
