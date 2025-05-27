@@ -16,6 +16,13 @@ import Navigation from '../components/Top_nav.astro';
 <div class="container">
   <!-- Left Side -->
   <div class="left">
+      <div class="row">
+      <div class="title">Køb billetter her</div>
+       <a href="/billetter" class="svg-button">
+          <!-- Replace with your SVG -->
+          <img src="ticket.svg" alt="My SVG Icon" width="40" height="40" />
+        </a>
+    </div>
     <div class="row">
       <div class="title">Stadion:</div>
       <div class="text">Østerbro Stadion</div>
@@ -66,6 +73,9 @@ import Navigation from '../components/Top_nav.astro';
   body {
     margin: 30px;
   }
+  .left .row:first-of-type {
+  margin-bottom: 70px;
+}
 
   .header {
     display: flex;

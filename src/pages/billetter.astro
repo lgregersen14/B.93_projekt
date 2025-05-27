@@ -1,0 +1,138 @@
+---
+import Navigation from '../components/Top_nav.astro';
+---
+
+	<Navigation />
+<div class="match-section">
+  <img src="billede1.png" alt="Background" class="background-image" />
+
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div class="match-card">
+      <div class="logos">
+        <img src="b93_logo.png" alt="B.93 logo" />
+        <img src="hvidovre_logo.png" alt="Hvidovre logo" />
+      </div>
+      <div class="match-info">
+        <div class="date">Søndag 2. juni 2025</div>
+        <div class="stadium">Østerbro Stadion</div>
+      </div>
+      <div class="match-footer">
+        B.93 – Hvidovre | PLAYOFF Søndag
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="match-card">
+      <div class="logos">
+        <img src="b93_logo.png" alt="B.93 logo" />
+        <img src="fcroskilde_logo.png" alt="FC Roskilde logo" />
+      </div>
+      <div class="match-info">
+        <div class="date">Fredag 7. juni 2025</div>
+        <div class="stadium">Østerbro Stadion</div>
+      </div>
+      <div class="match-footer">
+        B.93 – FC Roskilde | Kvalifikationskamp
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="match-card">
+      <div class="logos">
+        <img src="b93_logo.png" alt="B.93 logo" />
+        <img src="fredericia_logo.png" alt="Fredericia logo" />
+      </div>
+      <div class="match-info">
+        <div class="date">Onsdag 12. juni 2025</div>
+        <div class="stadium">Østerbro Stadion</div>
+      </div>
+      <div class="match-footer">
+        B.93 – Fredericia | Venskabskamp
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+
+ .match-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.card-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-start; /* ← prevents spreading out */
+  gap: 15px;                   /* ← controls spacing between cards */
+  padding: 0 30px;
+  height: 45rem;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.match-card {
+  flex: 1;
+  max-width: 300px;          /* Reduce card width */
+  height: 60%;               /* Reduce card height */
+  background-color: #00064E;
+  opacity: 90%;
+  backdrop-filter: blur(2px);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  color: white;
+  font-family: "display", sans-serif;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logos img {
+  height: 50px;
+  width: auto;
+}
+
+.match-info {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.match-footer {
+  background-color: #00084b;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+
+}
+/* Hover effect */
+.match-footer:hover {
+  transform: scale(1.05);
+}
+
+</style>
